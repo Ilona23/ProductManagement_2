@@ -8,5 +8,6 @@ namespace ProductManagement_2.Interfaces
         ProductModel CreateProduct(ProductModel productModel);
         string GetProductName(int Id);
         // void DeleteProduct(int Id);
+        // void UpdateProduct(ProductModel productModel);
     }
 }
