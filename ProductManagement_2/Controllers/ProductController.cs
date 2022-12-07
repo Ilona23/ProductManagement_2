@@ -17,5 +17,12 @@ namespace ProductManagement_2.Controllers
 
         [HttpGet("getProduct")]
         public ProductModel GetProduct(int Id) => _productService.GetProduct(Id);
+
+        [HttpGet("getProductName")]
+        public string GetProductName(int Id) => _productService.GetProductName(Id);
+
+        [HttpGet("createProduct")]
+        public ProductModel CreateProduct(ProductModel product) => _productService.CreateProduct(product);
+
     }
 }

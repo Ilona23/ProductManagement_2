@@ -4,9 +4,9 @@ using ProductManagement_2.Models;
 
 namespace ProductManagement_2.Mapping
 {
-    public class ProductMapper : IMapper<Entities.Product, ProductModel>
+    public class ProductMapper : IMapper<Product, ProductModel>
     {
-        public ProductModel MapFromEntityToModel(Entities.Product source)
+        public ProductModel MapFromEntityToModel(Product source)
         {
             return new ProductModel
             {
@@ -20,12 +20,20 @@ namespace ProductManagement_2.Mapping
 
         public Product MapFromModelToEntity(ProductModel source)
         {
-            throw new NotImplementedException();
+            var entity = new Product();
+
+            MapFromModelToEntity(source, entity);
+
+            return entity;
         }
 
         public void MapFromModelToEntity(ProductModel source, Product target)
         {
-            throw new NotImplementedException();
+            target.Name = source.Name;
+            target.Description = source.Description;
+            target.Category = source.Category;
+            target.Price = source.Price;
+            target.Id = source.Id;
         }
     }
 }
